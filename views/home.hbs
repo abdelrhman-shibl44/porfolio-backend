@@ -1,0 +1,73 @@
+<div class="container">
+	{{#if removedProject}}
+	<div class="alert alert-success alert-dismissible fade show" role="alert">
+		<div>{{removedProject}}</div>
+		<button
+			type="button"
+			class="btn-close"
+			data-bs-dismiss="alert"
+			aria-label="Close"></button>
+	</div>
+	{{/if}}
+	<div
+		class="col-lg-12 m-auto d-flex justify-content-center align-items-center">
+		<div class="table-responsive">
+			<div class="d-flex justify-content-between align-items-center">
+				<h2>Projects</h2>
+				<div class="buttonHold">
+					<a href="/form" type="button" class="addBtn btn btn-primary">add
+						Project</a>
+				</div>
+			</div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">id</th>
+						<th scope="col">type</th>
+						<th scope="col">name</th>
+						<th scope="col">img</th>
+						<th scope="col">link</th>
+						<th scope="col">description</th>
+						<th scope="col">order</th>
+						<th scope="col">status</th>
+						<th scope="col">controllers</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each rows}}
+					<tr>
+						<th scope="col">{{@index}}</th>
+						<td class="info"><span>{{this.id}}</span></td>
+						<td class="info"><span>{{this.type}}</span></td>
+						<td class="info"><span>{{this.name}}</span></td>
+						<td class="info">
+							<div class="imgHolder">
+							<img src="/images/{{this.img}}"/>	
+							</div>
+							</td>
+						<td class="info"><span>{{this.link}}</span></td>
+						<td class="info description"><span>{{this.description}}</span></td>
+						<td class="info"><span>{{this.sort_order}}</span></td>
+						<td class="info"><span>{{this.status}}</span></td>
+						<td class="text-center">
+							<a
+								href="/editProject/{{this.id}}"
+								type="button"
+								class="btn btn-small control_btn">
+								<i class="bi bi-pencil-square"></i>
+							</a>
+							<a
+								href="/delete/{{this.id}}?name={{this.name}}"
+								type="button"
+								class="control_btn btn btn-danger btn-small">
+								<i class="bi bi-database-x"></i>
+							</a>
+						</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

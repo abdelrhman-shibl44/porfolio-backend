@@ -1,0 +1,39 @@
+<div class="container">
+  {{#if alert}}
+  <div class="alert alert-success alert-dismissible fade show " role="alert">
+    <div>{{alert}}</div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {{/if}}
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-9 mx-auto">
+      <nav class="mb-5" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="breedLink" href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">New
+            Project</li>
+        </ol>
+      </nav>
+      <h1>Add or Delete Projects</h1>
+      <form action="/form" enctype="multipart/form-data" method="POST">
+        {{> projectForm}}
+        <div class="col-md-12">
+          <button type="submit" class="addBtn btn btn-primary mt-2">Add
+            Project</button>
+        </div>
+      </form>
+      <form action="/delete" method="POST">
+        <div class="form-group mt-5">
+          <label class="mt-4" for="id">Project ID:</label>
+          <input type="number" class="form-control mt-2" name="id" placeholder="Please enter the ID of the project"
+            required />
+        </div>
+        <div class="col-xs-12">
+          <button type="submit" class="deleteBtn btn btn-danger mt-2">
+            Delete Project
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

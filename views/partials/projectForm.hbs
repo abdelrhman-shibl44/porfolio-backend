@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="type">Project Type:</label>
+        <input
+            type="text"
+            class="form-control my-2"
+            name="type"
+            value="{{this.type}}"
+            placeholder="Please enter type of project React, Java..."
+            id="type"
+            required
+        />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="name">Project Name:</label>
+        <input
+            type="text"
+            class="form-control my-2"
+            name="name"
+            value="{{this.name}}"
+            placeholder="Please enter name of project"
+            id="name"
+            required
+        />
+        </div>
+    </div>
+    <div class="col-md-6">
+    <div class="form-group">
+        <label for="file-upload" class="form-label">Choose a file:</label>
+        <input id="file-upload" name="img" value="hello" class="form-control" type="file">
+            <p>{{this.img}}</p>
+
+    </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="link">Project Link:</label>
+        <input
+            class="form-control my-2"
+            name="link"
+            value="{{this.link}}"
+            id="link"
+            placeholder="Put Link of project"
+            required
+        ></input>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="sort_order">Projects Order:</label>
+        <input
+            type="number"
+            class="form-control my-2"
+            name="sort_order"
+            value="{{this.sort_order}}"
+            id="sort_order"
+            placeholder="Put Link of project"
+            required
+        ></input>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="description">Project Description:</label>
+        <textarea
+        class="form-control my-2"
+        name="description"
+        id="description"
+        placeholder="Type description of project"
+        required
+        >{{this.description}}</textarea>
+    </div>
+    </div>

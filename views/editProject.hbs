@@ -1,0 +1,30 @@
+<div class="container">
+  {{#if alert}}
+  <div class="alert alert-success alert-dismissible fade show " role="alert">
+    <div>{{alert}}</div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert"
+      aria-label="Close"></button>
+  </div>
+  {{/if}}
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-9 mx-auto">
+      <nav class="mb-5" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="breedLink" href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Edit Project</li>
+        </ol>
+      </nav>
+      <h1> Edit Project</h1>
+      {{#each rows}}
+      <form action="/editProject/{{this.id}}" enctype="multipart/form-data" method="POST">
+        {{> projectForm}}
+        <div class="col-xs-12">
+          <button type="submit" class="deleteBtn btn btn-danger mt-2">Update
+            Project
+          </button>
+        </div>
+      </form>
+      {{/each}}
+    </div>
+  </div>
+</div>
