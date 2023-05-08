@@ -17,7 +17,8 @@ app.use(session({
 }));
 
 // Create an instance of express app
-
+//------ require("./db_services")--------
+require("./db_services");
 //------get port from env or take 5050
 const port = process.env.PORT || 6000;
 //-------middleWars--------

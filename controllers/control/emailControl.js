@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-const hbs= require("nodemailer-express-handlebars");
+const hbs = require("nodemailer-express-handlebars");
 require("dotenv").config();
 exports.email = async(req,res) => {
   try {

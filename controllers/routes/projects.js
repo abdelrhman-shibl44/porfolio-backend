@@ -3,6 +3,8 @@ const router = express.Router();
 const controll = require('../control/projectsControl')
 const controlRoutes = require('../control/loginControl')
 const controlEamil = require('../control/emailControl')
+//require build username and password 
+require("../control/userControl")
 // use this middleware to upload images 
 const isAuthenticated = (req, res, next) => {
   if (req.session.authenticated) {
